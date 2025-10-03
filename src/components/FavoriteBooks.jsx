@@ -11,7 +11,7 @@ export default function UserFavoriteBooks() {
     if (!token) return;
 
     try {
-      const res = await axios.get("http://localhost:5000/api/favorites/my", {
+      const res = await axios.get("https://e-library-backend-gaw0.onrender.com/api/favorites/my", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -53,7 +53,7 @@ export default function UserFavoriteBooks() {
     if (!token) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/favorites/unmark/${bookId}`, {
+      await axios.delete(`https://e-library-backend-gaw0.onrender.com/api/favorites/unmark/${bookId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

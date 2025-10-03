@@ -11,6 +11,10 @@ import AdminDashboard from './components/AdminDashboard';
 import AllBooksPage from './components/AllBooksPage'
 import ReadBook from './components/ReadBook';
 import UserProfileDetailsSection from "./components/UserProfileDetailsSection";
+import BookList from './components/BookList';
+import BookForm from './components/BookForm';
+import BookReading from './components/BookReading';
+
 
 function App() {
   return (
@@ -28,6 +32,10 @@ function App() {
         <Route path="/books" element={<AllBooksPage/>}/>
         <Route path="/userdashboard" element={<UserDashboard/>} />
         <Route path="/read/works/:bookId" element={<ReadBook />} />
+        <Route path="/mybooks" element={<BookList />} />
+        <Route path="/add-book" element={<BookForm />} />
+        <Route path="/edit-book/:id" element={<BookForm />} />
+        <Route path="/read/:id" element={<BookReading />} />
         
       </Routes>
   

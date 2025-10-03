@@ -36,10 +36,10 @@ export default function TopRatedBooksSection() {
     if (!token) return;
     try {
       const [favRes, readRes] = await Promise.all([
-        axios.get("http://localhost:5000/api/favorites/my", {
+        axios.get("https://e-library-backend-gaw0.onrender.com/api/favorites/my", {
           headers: { Authorization: `Bearer ${token}` },
         }),
-        axios.get("http://localhost:5000/api/read-books/my", {
+        axios.get("https://e-library-backend-gaw0.onrender.com/api/read-books/my", {
           headers: { Authorization: `Bearer ${token}` },
         })
       ]);
@@ -62,12 +62,12 @@ export default function TopRatedBooksSection() {
 
     try {
       if (isFav) {
-        await axios.delete(`http://localhost:5000/api/favorites/unmark/${bookId}`, {
+        await axios.delete(`https://e-library-backend-gaw0.onrender.com/api/favorites/unmark/${bookId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setFavorites((prev) => prev.filter((id) => id !== bookId));
       } else {
-        await axios.post("http://localhost:5000/api/favorites/mark", {
+        await axios.post("https://e-library-backend-gaw0.onrender.com/api/favorites/mark", {
           bookId,
           title: book.title,
           author: book.authors?.[0]?.name || "Unknown",
@@ -94,7 +94,7 @@ export default function TopRatedBooksSection() {
 
     try {
       if (!isRead) {
-        await axios.post("http://localhost:5000/api/read-books/mark", {
+        await axios.post("https://e-library-backend-gaw0.onrender.com/api/read-books/mark", {
           bookId,
           title: book.title,
           author: book.authors?.[0]?.name || "Unknown",
@@ -106,7 +106,7 @@ export default function TopRatedBooksSection() {
         });
         setReadBooks((prev) => [...prev, bookId]);
       } else {
-        await axios.delete(`http://localhost:5000/api/read-books/unmark/${bookId}`, {
+        await axios.delete(`https://e-library-backend-gaw0.onrender.com/api/read-books/unmark/${bookId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setReadBooks((prev) => prev.filter((id) => id !== bookId));

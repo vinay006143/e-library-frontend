@@ -35,7 +35,7 @@ export default function ChangePasswordForm() {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.put(
-        "http://localhost:5000/api/users/change-password",
+        "https://e-library-backend-gaw0.onrender.com/api/users/change-password",
         { currentPassword, newPassword },
         {
           headers: {

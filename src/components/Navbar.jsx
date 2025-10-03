@@ -49,7 +49,12 @@ export default function Navbar() {
             </Link>
              <Link to="/books">
               <button className="text-indigo-700 font-semibold hover:text-white hover:bg-indigo-500 px-4 py-2 rounded transition-all duration-300">
-                Books
+               Online Books
+              </button>
+            </Link>
+            <Link to="/mybooks">
+              <button className="text-indigo-700 font-semibold hover:text-white hover:bg-indigo-500 px-4 py-2 rounded transition-all duration-300">
+                My Books
               </button>
             </Link>
             <Link to="/about">

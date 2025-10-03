@@ -16,7 +16,7 @@ export default function CreatePage() {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/books/create', form);
+      const res = await axios.post('https://e-library-backend-gaw0.onrender.com/api/books/create', form);
       alert(res.data.msg);
       setForm({ title: '', author: '', description: '', category: '' });
     } catch (err) {

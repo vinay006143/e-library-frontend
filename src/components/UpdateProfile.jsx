@@ -23,12 +23,12 @@ export default function ProfileUploader() {
   const fetchProfile = async () => {
     if (!userId) return;
     try {
-      const res = await axios.get(`http://localhost:5000/api/profiles/user/${userId}`);
+      const res = await axios.get(`https://e-library-backend-gaw0.onrender.com/api/profiles/user/${userId}`);
       setProfile(res.data);
       setFullName(res.data.fullName || "");
       setBio(res.data.bio || "");
       if (res.data.profileImage) {
-        setPreview(`http://localhost:5000${res.data.profileImage}`);
+        setPreview(`https://e-library-backend-gaw0.onrender.com${res.data.profileImage}`);
       }
 
       // Store in localStorage
@@ -59,7 +59,7 @@ export default function ProfileUploader() {
     }
 
     try {
-      const res = await axios.post("http://localhost:5000/api/profiles/upload", formData);
+      const res = await axios.post("https://e-library-backend-gaw0.onrender.com/api/profiles/upload", formData);
       setProfile(res.data.profile);
       setMessage(res.data.message || "Profile updated");
 
@@ -118,7 +118,7 @@ export default function ProfileUploader() {
           <p><strong>Bio:</strong> {profile.bio}</p>
           {profile.profileImage && (
             <img
-              src={`http://localhost:5000${profile.profileImage}`}
+              src={`https://e-library-backend-gaw0.onrender.com${profile.profileImage}`}
               alt="Profile"
               className="w-32 h-32 mt-2 object-cover rounded-full"
             />

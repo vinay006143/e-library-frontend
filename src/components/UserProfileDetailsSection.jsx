@@ -23,7 +23,7 @@ export default function UserDashboard() {
           <div className="flex flex-col md:flex-row items-center gap-6 p-6">
             {userProfile.profileImage ? (
               <img
-                src={`http://localhost:5000${userProfile.profileImage}`}
+                src={`https://e-library-backend-gaw0.onrender.com${userProfile.profileImage}`}
                 alt="Profile"
                 className="w-32 h-32 rounded-full object-cover border-4 border-indigo-300 shadow-md"
               />

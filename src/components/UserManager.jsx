@@ -9,7 +9,7 @@ export default function UserManager() {
   // Fetch users from backend
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/users");
+      const res = await axios.get("https://e-library-backend-gaw0.onrender.com/api/users");
       setUsers(res.data);
     } catch (err) {
       setError("Failed to fetch users");
@@ -22,7 +22,7 @@ export default function UserManager() {
     if (!confirm) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/users/${id}`);
+      await axios.delete(`https://e-library-backend-gaw0.onrender.com/api/users/${id}`);
       fetchUsers(); // Refresh list after deletion
     } catch (err) {
       setError("Failed to delete user");

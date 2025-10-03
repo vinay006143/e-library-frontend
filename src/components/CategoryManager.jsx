@@ -9,7 +9,7 @@ export default function CategoryManager() {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/categories");
+      const res = await axios.get("https://e-library-backend-gaw0.onrender.com/api/categories");
       setCategories(res.data);
     } catch (err) {
       console.error("Error fetching categories:", err);
@@ -19,7 +19,7 @@ export default function CategoryManager() {
   const handleCreate = async () => {
     if (!name.trim()) return;
     try {
-      await axios.post("http://localhost:5000/api/categories", { name });
+      await axios.post("https://e-library-backend-gaw0.onrender.com/api/categories", { name });
       setName("");
       setError("");
       fetchCategories();
@@ -30,7 +30,7 @@ export default function CategoryManager() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/categories/${id}`);
+      await axios.delete(`https://e-library-backend-gaw0.onrender.com/api/categories/${id}`);
       fetchCategories();
     } catch (err) {
       setError("Failed to delete category");

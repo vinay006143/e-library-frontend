@@ -13,6 +13,7 @@ import CategoryManager from "./CategoryManager";
 import UserManager from "./UserManager";
 import ApiBooks from "./ApiBooks";  
 import BookRatingLevels from "./BookRatingLevels";
+import BookForm from "./BookForm";
 
 const navItems = [
   { icon: <BarChart3 size={20} />, label: "Dashboard" },
@@ -41,7 +42,7 @@ export default function AdminDashboard() {
       case "Dashboard":
         return <DashboardOverview />;
       case "Books":
-        return <ApiBooks/>;
+        return <BookForm />;
       case "Users":
         return <UserManager />;
       case "Categories":

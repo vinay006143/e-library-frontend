@@ -118,7 +118,7 @@ const userId = storedUser._id
                   <div className="w-10 h-10 rounded-full overflow-hidden">
       {profileImage ? (
         <img
-          src={`http://localhost:5000${profileImage}`}
+          src={`https://e-library-backend-gaw0.onrender.com${profileImage}`}
           alt="User Profile"
           className="w-full h-full object-cover"
         />

@@ -19,7 +19,7 @@ export default function AdminDashboard() {
   const [toast, setToast] = useState("");
 
   const fetchBooks = async () => {
-    const res = await axios.get("http://localhost:5000/api/books");
+    const res = await axios.get("https://e-library-backend-gaw0.onrender.com/api/books");
     setBooks(res.data);
   };
 
@@ -41,7 +41,7 @@ export default function AdminDashboard() {
         pageCount: Number(form.pageCount),
         publicationYear: Number(form.publicationYear),
       };
-      await axios.post("http://localhost:5000/api/books", payload);
+      await axios.post("https://e-library-backend-gaw0.onrender.com/api/books", payload);
       setToast("✅ Book uploaded successfully!");
       setForm({
         title: "",
